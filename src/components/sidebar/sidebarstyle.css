@@ -1,0 +1,45 @@
+#sideBarContainer {
+	width: 200px;
+	padding-top: 50px;
+	box-shadow: -5px 0px 15px gray;
+	transition: .3s ease-in-out;
+	position: fixed;
+	left: 0;
+	height: 100vh;
+	background: #ffffff;
+	overflow: auto;
+}
+#sideBarBody {
+	padding: 0px 20px 0px 20px;
+	height: 95%;
+}
+#sideBarBody ul{
+	padding: 0px;
+}
+#sideBarBody ul a li{
+	list-style-type: none;
+	margin: 7px 0px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ff800052;
+	border-style: dashed;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	font-size: 12pt;
+	background: linear-gradient(40deg,#fc6262, #ffd86f);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+#sideBarBody ul a{
+	text-decoration: none;
+}
+#sideBarBody ul a:hover li {
+	background: linear-gradient(40deg,#fc6262, #ffd86f);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	/* background: linear-gradient(to right, #ffffff, #f3caa1); */
+}
