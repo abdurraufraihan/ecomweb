@@ -13,10 +13,10 @@
 	padding: 0px 20px 0px 20px;
 	height: 95%;
 }
-#sideBarBody ul{
+#sideBarBody ul {
 	padding: 0px;
 }
-#sideBarBody ul a li{
+#sideBarBody ul a li {
 	list-style-type: none;
 	margin: 7px 0px;
 	padding-bottom: 5px;
@@ -32,7 +32,7 @@
 	-moz-background-clip: text;
 	-moz-text-fill-color: transparent;
 }
-#sideBarBody ul a{
+#sideBarBody ul a {
 	text-decoration: none;
 }
 #sideBarBody ul a:hover li {
