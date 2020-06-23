@@ -1,0 +1,11 @@
+.bodyContainer {
+	margin-top: 50px;
+	transition: .3s ease-in-out;
+	width: 100%;
+	padding: 20px;
+}
+#body {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
