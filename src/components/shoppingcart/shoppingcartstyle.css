@@ -1,6 +1,7 @@
 #cartContainer {
 	position: fixed;
-	right: -285px;
+	top: 0px;
+	right: 0px;
 	width: 275px;
 	height: 100%;
 	box-shadow: 5px 0px 15px gray;

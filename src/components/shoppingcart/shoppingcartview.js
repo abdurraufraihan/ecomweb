@@ -16,7 +16,7 @@ export default class ShoppingCart extends Component {
 
 	render() {
 		return (
-			<div id='cartContainer' style={this.getCartStyle()}>
+			<div id='cartContainer'>
 				<div id='cart'>
 					{this.renderEmptyCart()}
 				</div>
