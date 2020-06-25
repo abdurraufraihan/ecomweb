@@ -1,0 +1,72 @@
+#cartContainer {
+	position: fixed;
+	right: -285px;
+	width: 275px;
+	height: 100%;
+	box-shadow: 5px 0px 15px gray;
+	transition: .3s ease-in-out;
+	background: #ffffff;
+	padding: 0px 0px 0px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+#cart {
+	margin-top: 50px;
+	overflow: auto;
+}
+#orderButtonContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+#orderButton {
+	display: flex;
+	color: #ffffff;
+}
+#placeOrder {
+	background: linear-gradient(40deg,#fc6262, #ffd86f);
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 3px 0px 0px 3px;
+}
+#orderPrice {
+	background: linear-gradient(40deg,#ffd86f, #fc6262);
+	padding: 5px;
+	border-radius: 0px 3px 3px 0px;
+}
+#emptyCart {
+	text-align: center;
+	margin-top: 120px;
+}
+#shoppingBagIcon {
+	font-size: 100pt;
+	background: linear-gradient(40deg,#fc6262, #fcefcb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+#emptyCartText {
+	font-size: 22pt;
+	background: linear-gradient(40deg,#fc6262, #fcefcb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(40deg,#ffd86f,#fc6262);
+	/* border-radius: 5px; */
+	cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(40deg, #fc6262, #ffd86f);
+}
