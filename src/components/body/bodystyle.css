@@ -4,6 +4,9 @@
 	width: 100%;
 	padding: 20px;
 }
+.bodyContainerWithCart {
+	margin-right: 275px;
+}
 #body {
 	display: flex;
 	justify-content: flex-start;

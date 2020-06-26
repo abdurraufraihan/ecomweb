@@ -3,10 +3,21 @@ import './bodystyle.css'
 import Product from '../product/productview';
 
 export default class Body extends Component {
+	getBodyStyle = () => {
+		return this.props.isShowSidebar ? {marginLeft: '230px'} : {};
+	}
+
+	getBodyStyleClass = () => {
+		return this.props.isShowShoppingCart ?
+			'bodyContainer bodyContainerWithCart' : 'bodyContainer';
+	}
+
 	render() {
 		return (
-			<div className='bodyContainer'>
+			<div className={this.getBodyStyleClass()} style={this.getBodyStyle()}>
 				<div id='body'>
+					<Product />
+					<Product />
 					<Product />
 					<Product />
 					<Product />

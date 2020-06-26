@@ -28,9 +28,14 @@ export default class Home extends Component {
 					toggleSidebar={this.toggleSidebar}
 					toggleShoppingCart={this.toggleShoppingCart}
 				/>
-				<SideBar isShowSidebar={this.state.isShowSidebar} />
-				<Body />
-				<ShoppingCart isShowShoppingCart={this.state.isShowShoppingCart} />
+				<div style={{display: 'flex'}}>
+					<SideBar isShowSidebar={this.state.isShowSidebar} />
+					<Body
+						isShowSidebar={this.state.isShowSidebar}
+						isShowShoppingCart={this.state.isShowShoppingCart}
+					/>
+					<ShoppingCart isShowShoppingCart={this.state.isShowShoppingCart} />
+				</div>
 			</React.Fragment>
 		);
 	}
