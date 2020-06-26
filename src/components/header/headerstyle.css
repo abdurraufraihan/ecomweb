@@ -69,6 +69,35 @@
 	height: 29px;
 	margin-top: 1px;
 }
+#cartIconContainer{
+	flex: 1;
+	position: relative;
+}
+#cartIcon {
+	cursor: pointer;
+	font-size: 18pt;
+	background: linear-gradient(40deg,#fc6262, #fcefcb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+#cartCounter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: -8px;
+	left: -18px;
+	font-size: 9pt;
+	font-weight: bold;
+	margin-left: 2px;
+	color: #ffffff;
+	border-radius: 50%;
+	background: linear-gradient(40deg,#fc6262, #fcefcb);
+}
 #signIn {
 	flex: 1;
 	display: flex;

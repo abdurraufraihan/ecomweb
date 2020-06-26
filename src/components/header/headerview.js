@@ -24,6 +24,13 @@ export default class Header extends Component {
 						<button type='submit' id='searchButton'>search</button>
 					</form>
 				</div>
+				<div id='cartIconContainer'>
+					<i
+						id='cartIcon'
+						className='fa fa-shopping-basket'
+					></i>
+					<span id='cartCounter'>5</span>
+				</div>
 				<div id='signIn'>SIGN IN</div>
 			</div>
 		);
