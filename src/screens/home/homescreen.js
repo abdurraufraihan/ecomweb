@@ -8,7 +8,8 @@ export default class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isShowSidebar: true
+			isShowSidebar: true,
+			isShowShoppingCart: false
 		}
 	}
 
@@ -16,13 +17,20 @@ export default class Home extends Component {
 		this.setState({isShowSidebar: !this.state.isShowSidebar});
 	}
 
+	toggleShoppingCart = () => {
+		this.setState({isShowShoppingCart: !this.state.isShowShoppingCart});
+	}
+
 	render() {
 		return (
 			<React.Fragment>
-				<Header toggleSidebar={this.toggleSidebar} />
+				<Header
+					toggleSidebar={this.toggleSidebar}
+					toggleShoppingCart={this.toggleShoppingCart}
+				/>
 				<SideBar isShowSidebar={this.state.isShowSidebar} />
 				<Body />
-				<ShoppingCart />
+				<ShoppingCart isShowShoppingCart={this.state.isShowShoppingCart} />
 			</React.Fragment>
 		);
 	}

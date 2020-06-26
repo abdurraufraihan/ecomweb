@@ -26,6 +26,7 @@ export default class Header extends Component {
 				</div>
 				<div id='cartIconContainer'>
 					<i
+						onClick={this.props.toggleShoppingCart}
 						id='cartIcon'
 						className='fa fa-shopping-basket'
 					></i>

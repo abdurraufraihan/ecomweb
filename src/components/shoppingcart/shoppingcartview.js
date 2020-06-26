@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import './shoppingcartstyle.css';
 
 export default class ShoppingCart extends Component {
+	getCartStyle = () => {
+		return this.props.isShowShoppingCart ? {right: '0px'} : {};
+	}
+
 	renderEmptyCart = () => {
 		return(
 			<div id='emptyCart'>
@@ -16,7 +20,7 @@ export default class ShoppingCart extends Component {
 
 	render() {
 		return (
-			<div id='cartContainer'>
+			<div id='cartContainer' style={this.getCartStyle()}>
 				<div id='cart'>
 					{this.renderEmptyCart()}
 				</div>
