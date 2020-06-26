@@ -7,7 +7,7 @@ export default class Header extends Component {
 		return (
 			<div id='headerContainer'>
 				<div id='logoContainer'>
-					<div id='burgerIconContainer'>
+					<div id='burgerIconContainer' onClick={this.props.toggleSidebar}>
 						<div className='burgerSlice'></div>
 						<div className='burgerSlice'></div>
 						<div className='burgerSlice'></div>
