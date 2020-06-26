@@ -5,7 +5,7 @@ import SideBar from '../../components/sidebar/sidebarview';
 import Body from '../../components/body/bodyview';
 import ShoppingCart from '../../components/shoppingcart/shoppingcartview';
 
-export default class Home extends Component {
+export default class HomeScreen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
