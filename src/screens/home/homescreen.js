@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './homescreenstyle.css';
 import Header from '../../components/header/headerview';
 import SideBar from '../../components/sidebar/sidebarview';
 import Body from '../../components/body/bodyview';
@@ -28,7 +29,7 @@ export default class Home extends Component {
 					toggleSidebar={this.toggleSidebar}
 					toggleShoppingCart={this.toggleShoppingCart}
 				/>
-				<div style={{display: 'flex'}}>
+				<div id='bodyContainer'>
 					<SideBar isShowSidebar={this.state.isShowSidebar} />
 					<Body
 						isShowSidebar={this.state.isShowSidebar}
