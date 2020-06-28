@@ -3,6 +3,42 @@ import {Link} from 'react-router-dom';
 import './headerstyle.css';
 
 export default class Header extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			search: ''
+		};
+	}
+
+	searchButtonSubmitHandler = (event) => {
+		event.preventDefault();
+		let searchKeyword = this.state.search.trim();
+		this.props.productSearchHandler(searchKeyword);
+	}
+
+	searchChangeHandler = (event) => {
+		this.setState({search: event.target.value});
+	}
+
+	renderSearch = () => {
+		return (
+			<div id='search'>
+				<form onSubmit={this.searchButtonSubmitHandler}>
+					<input
+						id='searchInput'
+						type='text'
+						placeholder='Search'
+						onChange={this.searchChangeHandler}
+						value={this.state.search}
+					/>
+					<button type='submit' id='searchButton'>
+						search
+					</button>
+				</form>
+			</div>
+		);
+	}
+
 	render() {
 		return (
 			<div id='headerContainer'>
@@ -14,16 +50,7 @@ export default class Header extends Component {
 					</div>
 					<div id='logo'><Link to='/'>Raihan Store</Link></div>
 				</div>
-				<div id='search'>
-					<form>
-						<input
-							id='searchInput'
-							type='text'
-							placeholder='Search'
-						/>
-						<button type='submit' id='searchButton'>search</button>
-					</form>
-				</div>
+				{this.renderSearch()}
 				<div id='cartIconContainer'>
 					<i
 						onClick={this.props.toggleShoppingCart}

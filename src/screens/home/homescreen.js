@@ -36,18 +36,21 @@ export default class HomeScreen extends Component {
 		return props.match ? props.match.params.categoryId : null;
 	}
 
-	getProductEndpoint = () => {
+	getProductEndpoint = (searchKeyword) => {
 		let categoryId = this.getCategoryId(this.props);
 		let endPoint = ApiEndpoints.PRODUCT_URL;
-		return categoryId ?
-			endPoint + '?'+ QueryParam.CATEGORY_ID + '=' + categoryId
-			:
-			endPoint;
+		if (searchKeyword) {
+			return endPoint + '?'+ QueryParam.SEARCH + '=' + searchKeyword;
+		}
+		if (categoryId) {
+			return endPoint + '?'+ QueryParam.CATEGORY_ID + '=' + categoryId;
+		}
+		return endPoint;
 	}
 
-	fetchProducts = () => {
+	fetchProducts = (searchKeyword=null) => {
 		ApiConnector.sendRequest(
-			this.getProductEndpoint(),
+			this.getProductEndpoint(searchKeyword),
 			this.productSuccessHandler,
 			this.erorHandler
 		);
@@ -65,12 +68,17 @@ export default class HomeScreen extends Component {
 		this.fetchProducts();
 	}
 
+	productSearchHandler = (searchKeyword) => {
+		this.fetchProducts(searchKeyword);
+	}
+
 	render() {
 		return (
 			<React.Fragment>
 				<Header
 					toggleSidebar={this.toggleSidebar}
 					toggleShoppingCart={this.toggleShoppingCart}
+					productSearchHandler={this.productSearchHandler}
 				/>
 				<div id='bodyContainer'>
 					<SideBar isShowSidebar={this.state.isShowSidebar} />
