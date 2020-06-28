@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import AppPath from './lib/path';
 import HomeScreen from './screens/home/homescreen';
 
 export default class Routes extends Component {
@@ -7,8 +8,8 @@ export default class Routes extends Component {
 		return (
 			<Router>
 				<Switch>
-					<Route path='/' exact component={HomeScreen} />
-					<Route path='/c/:categoryId' exact component={HomeScreen} />
+					<Route path={AppPath.HOME} exact component={HomeScreen} />
+					<Route path={AppPath.CATEGORY} exact component={HomeScreen} />
 				</Switch>
 			</Router>
 		);
