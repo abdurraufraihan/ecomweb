@@ -16,11 +16,14 @@ export default class Body extends Component {
 		return (
 			<div className={this.getBodyStyleClass()} style={this.getBodyStyle()}>
 				<div id='body'>
-					<Product />
-					<Product />
-					<Product />
-					<Product />
-					<Product />
+				{this.props.products &&
+						this.props.products.map((product) => (
+							<Product
+								key={product.id}
+								product={product}
+							/>
+						))
+					}
 				</div>
 			</div>
 		);
