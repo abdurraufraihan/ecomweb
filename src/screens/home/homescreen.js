@@ -6,6 +6,7 @@ import Body from '../../components/body/bodyview';
 import ShoppingCart from '../../components/shoppingcart/shoppingcartview';
 import ApiConnector from '../../api/apiconnector';
 import ApiEndpoints from '../../api/apiendpoints';
+import QueryParam from '../../api/apiqueryparams';
 
 export default class HomeScreen extends Component {
 	constructor(props) {
@@ -31,12 +32,37 @@ export default class HomeScreen extends Component {
 
 	erorHandler = (error) => {console.error(error)} //TODO:show error right below of header
 
-	componentDidMount() {
+	getCategoryId = (props) => {
+		return props.match ? props.match.params.categoryId : null;
+	}
+
+	getProductEndpoint = () => {
+		let categoryId = this.getCategoryId(this.props);
+		let endPoint = ApiEndpoints.PRODUCT_URL;
+		return categoryId ?
+			endPoint + '?'+ QueryParam.CATEGORY_ID + '=' + categoryId
+			:
+			endPoint;
+	}
+
+	fetchProducts = () => {
 		ApiConnector.sendRequest(
-			ApiEndpoints.PRODUCT_URL,
+			this.getProductEndpoint(),
 			this.productSuccessHandler,
 			this.erorHandler
 		);
+	}
+
+	componentDidUpdate(prevProps) {
+		let catId = this.getCategoryId(this.props);
+		let prevCatId = this.getCategoryId(prevProps);
+		if (catId !== prevCatId) {
+			this.fetchProducts();
+		}
+	}
+
+	componentDidMount() {
+		this.fetchProducts();
 	}
 
 	render() {

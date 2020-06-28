@@ -7,7 +7,8 @@ export default class Routes extends Component {
 		return (
 			<Router>
 				<Switch>
-					<Route path='/' component={HomeScreen}/>
+					<Route path='/' exact component={HomeScreen} />
+					<Route path='/c/:categoryId' exact component={HomeScreen} />
 				</Switch>
 			</Router>
 		);
