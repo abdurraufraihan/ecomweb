@@ -4,13 +4,16 @@ import Header from '../../components/header/headerview';
 import SideBar from '../../components/sidebar/sidebarview';
 import Body from '../../components/body/bodyview';
 import ShoppingCart from '../../components/shoppingcart/shoppingcartview';
+import ApiConnector from '../../api/apiconnector';
+import ApiEndpoints from '../../api/apiendpoints';
 
 export default class HomeScreen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			isShowSidebar: true,
-			isShowShoppingCart: false
+			isShowShoppingCart: false,
+			products: {}
 		}
 	}
 
@@ -20,6 +23,20 @@ export default class HomeScreen extends Component {
 
 	toggleShoppingCart = () => {
 		this.setState({isShowShoppingCart: !this.state.isShowShoppingCart});
+	}
+
+	productSuccessHandler = (products) => {
+		this.setState({products: products});
+	}
+
+	erorHandler = (error) => {console.error(error)} //TODO:show error right below of header
+
+	componentDidMount() {
+		ApiConnector.sendRequest(
+			ApiEndpoints.PRODUCT_URL,
+			this.productSuccessHandler,
+			this.erorHandler
+		);
 	}
 
 	render() {
@@ -32,6 +49,7 @@ export default class HomeScreen extends Component {
 				<div id='bodyContainer'>
 					<SideBar isShowSidebar={this.state.isShowSidebar} />
 					<Body
+						products={this.state.products.products}
 						isShowSidebar={this.state.isShowSidebar}
 						isShowShoppingCart={this.state.isShowShoppingCart}
 					/>
