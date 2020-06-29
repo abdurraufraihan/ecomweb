@@ -1,0 +1,24 @@
+#productSkeletonContainer {
+	max-width: 1000px;
+	margin: 0px auto;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+#productSkeletonWrapper {
+	margin: 10px 25px;
+}
+.productSkeleton {
+	width: 200px;
+	margin: 10px 0px;
+	border-radius: 5px;
+}
+.productSkeletonImage {
+	height: 200px;
+}
+.productSkeletonTitle {
+	height: 40px;
+}
+.productSkeletonAddToCart {
+	height: 30px;
+}

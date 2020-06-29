@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './bodystyle.css'
 import Product from '../product/productview';
+import ProductSkeleton from '../skeleton/product/productskeletonview';
 
 export default class Body extends Component {
 	getBodyStyle = () => {
@@ -16,7 +17,7 @@ export default class Body extends Component {
 		return (
 			<div className={this.getBodyStyleClass()} style={this.getBodyStyle()}>
 				<div id='body'>
-				{this.props.products &&
+					{this.props.products ?
 						this.props.products.map((product) => (
 							<Product
 								key={product.id}
@@ -24,6 +25,8 @@ export default class Body extends Component {
 								addToCartHandler={this.props.addToCartHandler}
 							/>
 						))
+						:
+						<ProductSkeleton />
 					}
 				</div>
 			</div>

@@ -1,0 +1,10 @@
+.skeleton {
+	background: linear-gradient(to right, #e5e5e5, #c0c0c0, #e5e5e5);
+	background-size: 200% 100%;
+	animation: skeletonBackgroundAnimation 2s infinite;
+	background-position: 75% 0%;
+}
+@keyframes skeletonBackgroundAnimation {
+	0%{background-position:0% 100%}
+	100%{background-position:-200% 100%}
+}
