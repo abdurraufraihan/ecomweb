@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import './sidebarstyle.css';
 import ApiConnector from '../../api/apiconnector';
 import ApiEndpoints from '../../api/apiendpoints';
+import CategorySkeleton from '../skeleton/category/categoryskeletonview';
 
 export default class SideBar extends Component {
 	constructor(props) {
@@ -36,7 +37,7 @@ export default class SideBar extends Component {
 		return (
 			<div id='sideBarContainer' style={this.getSidebarStyle()}>
 				<div id='sideBarBody'>
-					{this.state.categories &&
+					{this.state.categories.length > 0 ?
 						<ul>
 							<Link to='/'><li>------------All------------</li></Link>
 							{this.state.categories.map((category) => (
@@ -45,6 +46,8 @@ export default class SideBar extends Component {
 								</Link>
 							))}
 						</ul>
+						:
+						<CategorySkeleton />
 					}
 				</div>
 			</div>
