@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './shoppingcartstyle.css';
+import CartProduct from './cartproduct/cartproductview';
 
 export default class ShoppingCart extends Component {
 	getCartStyle = () => {
@@ -22,7 +23,8 @@ export default class ShoppingCart extends Component {
 		return (
 			<div id='cartContainer' style={this.getCartStyle()}>
 				<div id='cart'>
-					{this.renderEmptyCart()}
+					<CartProduct />
+					<CartProduct />
 				</div>
 				<div id='orderButtonContainer'>
 					<div id='orderButton'>

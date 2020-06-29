@@ -1,0 +1,42 @@
+#cartProductContainer {
+	display: flex;
+	align-items: center;
+}
+#cartImgContainer {
+	width: 20%;
+}
+#cartImg {
+	width: 50px;
+	height: 50px;
+}
+#quantityContainer {
+	width: 10%;
+}
+#cartProductQuantity {
+	width: 30px;
+	color: #f49268;
+	border: none;
+}
+#cartProductTitleAndPrice {
+	width: 60%;
+	font-size: 10pt;
+	background: linear-gradient(40deg,#fc6262, #ffd86f);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
+#cartProductTitle {
+	margin-bottom: 5px;
+}
+#cartProductPrice {
+	margin-top: 5px;
+}
+#removeCartProduct {
+	width: 10%;
+	margin-left: 5px;
+}
+#removeCartProductIcon {
+	cursor: pointer;
+	color: #f49268;
+}
