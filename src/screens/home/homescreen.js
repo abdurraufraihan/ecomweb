@@ -14,7 +14,9 @@ export default class HomeScreen extends Component {
 		this.state = {
 			isShowSidebar: true,
 			isShowShoppingCart: false,
-			products: {}
+			products: {},
+			cart: {},
+			totalCartItem: 0
 		}
 	}
 
@@ -72,18 +74,30 @@ export default class HomeScreen extends Component {
 		this.fetchProducts(searchKeyword);
 	}
 
+	getTotalCartItem = () => {
+		return Object.values(this.state.cart).length;
+	}
+
+	addToCartHandler = (product) => {
+		let cart = this.state.cart;
+		cart[product.id] = {product: product, quantity: 1};
+		this.setState({cart: cart, totalCartItem: this.getTotalCartItem()});
+	}
+
 	render() {
 		return (
 			<React.Fragment>
 				<Header
 					toggleSidebar={this.toggleSidebar}
 					toggleShoppingCart={this.toggleShoppingCart}
+					totalCartItem={this.state.totalCartItem}
 					productSearchHandler={this.productSearchHandler}
 				/>
 				<div id='bodyContainer'>
 					<SideBar isShowSidebar={this.state.isShowSidebar} />
 					<Body
 						products={this.state.products.products}
+						addToCartHandler={this.addToCartHandler}
 						isShowSidebar={this.state.isShowSidebar}
 						isShowShoppingCart={this.state.isShowShoppingCart}
 					/>

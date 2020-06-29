@@ -21,6 +21,7 @@ export default class Body extends Component {
 							<Product
 								key={product.id}
 								product={product}
+								addToCartHandler={this.props.addToCartHandler}
 							/>
 						))
 					}

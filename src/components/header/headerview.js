@@ -57,7 +57,7 @@ export default class Header extends Component {
 						id='cartIcon'
 						className='fa fa-shopping-basket'
 					></i>
-					<span id='cartCounter'>5</span>
+					<span id='cartCounter'>{this.props.totalCartItem}</span>
 				</div>
 				<div id='signIn'>SIGN IN</div>
 			</div>
