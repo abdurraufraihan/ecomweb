@@ -84,6 +84,18 @@ export default class HomeScreen extends Component {
 		this.setState({cart: cart, totalCartItem: this.getTotalCartItem()});
 	}
 
+	setProductQuantityToCart = (productId, quantity) => {
+		let cart = this.state.cart;
+		cart[productId].quantity = quantity;
+		this.setState({cart: cart});
+	}
+
+	productRemoveHandler = (productId) => {
+		let cart = this.state.cart;
+		delete cart[productId];
+		this.setState({cart: cart, totalCartItem: this.getTotalCartItem()});
+	}
+
 	render() {
 		return (
 			<React.Fragment>
@@ -101,7 +113,13 @@ export default class HomeScreen extends Component {
 						isShowSidebar={this.state.isShowSidebar}
 						isShowShoppingCart={this.state.isShowShoppingCart}
 					/>
-					<ShoppingCart isShowShoppingCart={this.state.isShowShoppingCart} />
+					<ShoppingCart
+						isShowShoppingCart={this.state.isShowShoppingCart}
+						cart={this.state.cart}
+						products={this.state.products.products}
+						setProductQuantityToCart={this.setProductQuantityToCart}
+						productRemoveHandler={this.productRemoveHandler}
+					/>
 				</div>
 			</React.Fragment>
 		);
