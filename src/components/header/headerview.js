@@ -23,7 +23,7 @@ export default class Header extends Component {
 	renderSearch = () => {
 		return (
 			<div id='search'>
-				<form onSubmit={this.searchButtonSubmitHandler}>
+				<form onSubmit={this.searchButtonSubmitHandler} id='searchForm'>
 					<input
 						id='searchInput'
 						type='text'
