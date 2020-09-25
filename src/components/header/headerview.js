@@ -51,13 +51,15 @@ export default class Header extends Component {
 					<div id='logo'><Link to='/'>Raihan Store</Link></div>
 				</div>
 				{this.renderSearch()}
-				<div id='cartIconContainer'>
-					<i
-						onClick={this.props.toggleShoppingCart}
-						id='cartIcon'
-						className='fa fa-shopping-basket'
-					></i>
-					<span id='cartCounter'>{this.props.totalCartItem}</span>
+				<div id='headerCartIcon'>
+					<div id='cartIconContainer'>
+						<i
+							onClick={this.props.toggleShoppingCart}
+							id='cartIcon'
+							className='fa fa-shopping-basket'
+						></i>
+						<span id='cartCounter'>{this.props.totalCartItem}</span>
+					</div>
 				</div>
 				<div id='signIn'>SIGN IN</div>
 			</div>
