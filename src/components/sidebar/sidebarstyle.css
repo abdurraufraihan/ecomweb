@@ -44,5 +44,6 @@
 	/* background: linear-gradient(to right, #ffffff, #f3caa1); */
 }
 #sideBarSearchContainer {
+	display: none;
 	list-style-type: none;
 }

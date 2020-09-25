@@ -4,6 +4,7 @@ import './sidebarstyle.css';
 import ApiConnector from '../../api/apiconnector';
 import ApiEndpoints from '../../api/apiendpoints';
 import CategorySkeleton from '../skeleton/category/categoryskeletonview';
+import SearchForm from '../form/searchform/searchformview';
 
 export default class SideBar extends Component {
 	constructor(props) {
@@ -40,20 +41,9 @@ export default class SideBar extends Component {
 					{this.state.categories.length > 0 ?
 						<ul>
 							<li id='sideBarSearchContainer'>
-								<div id='search'>
-									<form onSubmit={this.searchButtonSubmitHandler} id='searchForm'>
-										<input
-											id='searchInput'
-											type='text'
-											placeholder='Search'
-											onChange={this.searchChangeHandler}
-											value={this.state.search}
-										/>
-										<button type='submit' id='searchButton'>
-											search
-										</button>
-									</form>
-								</div>
+								<SearchForm
+									productSearchHandler={this.props.productSearchHandler}
+								/>
 							</li>
 							{this.state.categories.map((category) => (
 								<Link key={category.id} to={this.getCategoryLink(category.id)}>

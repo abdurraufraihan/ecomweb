@@ -42,6 +42,9 @@
 	background: linear-gradient(40deg,#ffd86f,#fc6262);
 	margin: 6px 0px;
 }
+#headerSearchFormContainer {
+	flex: 4;
+}
 #headerCartIcon {
 	flex: 1;
 	display: flex;

@@ -106,7 +106,10 @@ export default class HomeScreen extends Component {
 					productSearchHandler={this.productSearchHandler}
 				/>
 				<div id='bodyContainer'>
-					<SideBar isShowSidebar={this.state.isShowSidebar} />
+					<SideBar
+						isShowSidebar={this.state.isShowSidebar}
+						productSearchHandler={this.productSearchHandler}
+					/>
 					<Body
 						products={this.state.products.products}
 						addToCartHandler={this.addToCartHandler}
