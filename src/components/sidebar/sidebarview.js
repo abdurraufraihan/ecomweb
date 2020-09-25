@@ -39,7 +39,22 @@ export default class SideBar extends Component {
 				<div id='sideBarBody'>
 					{this.state.categories.length > 0 ?
 						<ul>
-							<Link to='/'><li>------------All------------</li></Link>
+							<li id='sideBarSearchContainer'>
+								<div id='search'>
+									<form onSubmit={this.searchButtonSubmitHandler} id='searchForm'>
+										<input
+											id='searchInput'
+											type='text'
+											placeholder='Search'
+											onChange={this.searchChangeHandler}
+											value={this.state.search}
+										/>
+										<button type='submit' id='searchButton'>
+											search
+										</button>
+									</form>
+								</div>
+							</li>
 							{this.state.categories.map((category) => (
 								<Link key={category.id} to={this.getCategoryLink(category.id)}>
 									<li>{category.name}</li>

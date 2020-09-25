@@ -43,16 +43,14 @@
 	margin: 6px 0px;
 }
 #search {
-	width: 70%;
+	flex: 4;
 }
 #searchForm {
 	display: flex;
 	align-items: center;
-	width: 55%;
-	margin: 0 auto;
 }
 #searchInput {
-	width: 600px;
+	width: 90%;
 	height: 25px;
 	border-radius: 3px 0 0 3px;
 	border: 1px solid #ff8000;
@@ -80,6 +78,7 @@
 	flex: 1;
 	display: flex;
 	justify-content: center;
+	padding: 0px 10px;
 }
 #cartIconContainer {
 	width: 28px;

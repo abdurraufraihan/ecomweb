@@ -43,3 +43,6 @@
 	-moz-text-fill-color: transparent;
 	/* background: linear-gradient(to right, #ffffff, #f3caa1); */
 }
+#sideBarSearchContainer {
+	list-style-type: none;
+}
