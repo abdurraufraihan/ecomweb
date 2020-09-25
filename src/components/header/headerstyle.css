@@ -42,38 +42,6 @@
 	background: linear-gradient(40deg,#ffd86f,#fc6262);
 	margin: 6px 0px;
 }
-#search {
-	flex: 4;
-}
-#searchForm {
-	display: flex;
-	align-items: center;
-}
-#searchInput {
-	width: 90%;
-	height: 25px;
-	border-radius: 3px 0 0 3px;
-	border: 1px solid #ff8000;
-	padding-left: 5px;
-	border-right: none;
-}
-#searchInput:focus {
-	outline: none;
-	box-shadow: 0px 0px 5px #ff8000;
-}
-#searchButton {
-	background: linear-gradient(40deg,#fc6262, #ffd86f);
-	border: 1px solid #ff8000;
-	color: #ffffff;
-	font-size: 11pt;
-	cursor: pointer;
-	border-radius: 0px 3px 3px 0px;
-	height: 29px;
-	margin-top: 1px;
-}
-#searchButton:focus {
-	outline: none;
-}
 #headerCartIcon {
 	flex: 1;
 	display: flex;
