@@ -13,6 +13,7 @@ export default class SearchForm extends Component {
 		event.preventDefault();
 		let searchKeyword = this.state.search.trim();
 		this.props.productSearchHandler(searchKeyword);
+		this.setState({search: ''});
 	}
 
 	searchChangeHandler = (event) => {
